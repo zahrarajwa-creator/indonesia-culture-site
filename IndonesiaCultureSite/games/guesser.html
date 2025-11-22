@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Game Tebak Lokasi Budaya Indonesia</title>
+    <link rel="stylesheet" href="../style.css">  <!-- Link ke CSS utama -->
+    <!-- Leaflet CSS untuk peta -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        .game-container { display: flex; flex-direction: column; align-items: center; padding: 20px; }
+        #quizImage { max-width: 100%; height: 300px; object-fit: cover; border-radius: 10px; margin-bottom: 20px; }
+        #map { height: 400px; width: 100%; max-width: 600px; border-radius: 10px; }
+        button { padding: 10px 20px; background: #d32f2f; color: white; border: none; cursor: pointer; margin: 10px; }
+        button:hover { background: #b71c1c; }
+        #result { text-align: center; margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tebak Lokasi Budaya Indonesia!</h1>
+        <nav>
+            <a href="../index.html">Kembali ke Home</a>
+        </nav>
+    </header>
+    
+    <main class="game-container">
+        <p>Ronde: <span id="round">1</span>/5</p>
+        <img id="quizImage" src="" alt="Karya Budaya">
+        <p>Klik di peta untuk menebak lokasi asal budaya ini:</p>
+        <div id="map"></div>
+        <button id="guessBtn">Tebak!</button>
+        <p id="result"></p>
+        <p>Skor Total: <span id="totalScore">0</span></p>
+        <button id="nextBtn" style="display: none;">Ronde Berikutnya</button>
+        <button id="restartBtn" style="display: none;">Main Lagi</button>
+    </main>
+    
+    <!-- Leaflet JS untuk peta -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Script data dan logika -->
+    <script src="questions.js"></script>
+    <script src="guesser.js"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+/* Reset dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body utama */
+body {
+    font-family: 'Arial', sans-serif;  /* Ganti font jika mau, misalnya 'Poppins' dari Google Fonts */
+    background-color: #f9f9f9;  /* Ganti warna latar, misalnya #fff5f5 untuk nuansa merah-putih */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #d32f2f;  /* Merah Indonesia; ganti ke #ffcc00 untuk kuning, atau gradien */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-size: 2.5em;  /* Besar-besarkan jika mau */
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: color 0.3s;  /* Efek hover */
+}
+
+nav a:hover {
+    color: #ffd700;  /* Hover kuning; kustomisasi */
+}
+
+/* Galeri */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.item {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s;  /* Efek zoom */
+}
+
+.item:hover {
+    transform: scale(1.05);  /* Hover efek */
+}
+
+.item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.item p {
+    padding: 15px;
+    text-align: center;
+}
+
+/* Section lain */
+section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+#about {
+    background-color: #e8f5e8;  /* Hijau lembut; ganti sesuai tema */
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Responsif untuk mobile */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    header h1 {
+        font-size: 2em;
+    }
+}

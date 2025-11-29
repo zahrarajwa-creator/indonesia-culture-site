@@ -1,0 +1,316 @@
+/* --- Import Font (Wajib untuk tampilan yang baik) --- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght=700&display=swap');
+
+/* --- Variabel Warna (Gunakan variabel yang sama dengan style.css) --- */
+:root {
+    --primary-bg-color: #f7f3e8; /* Krem muda */
+    --secondary-bg-color: #ecd7b7; /* Krem lebih gelap */
+    --header-bg-color: #3b2a22; /* Cokelat tua */
+    --text-color: #3b2a22; /* Cokelat tua untuk teks */
+    --highlight-color: #8b5a2b; /* Cokelat oranye untuk highlight */
+    --font-family-body: 'Montserrat', sans-serif;
+    --font-family-heading: 'Playfair Display', serif;
+}
+
+/* FIX STICKY HEADER: Memberi jarak agar konten tidak tertutup header */
+#content-wrapper { 
+    padding-top: 60px; /* Sesuaikan angka ini jika tinggi header Anda berbeda */
+}
+
+/* --- FIX: Z-INDEX UNTUK KONTROL ZOOM PETAL --- */
+/* Membuat kontrol zoom (+/-) selalu tampil di atas elemen lain */
+.leaflet-control-container {
+    z-index: 1000 !important; 
+}
+
+/* --- Pengaturan Dasar Body & Container --- */
+body {
+    background-color: var(--primary-bg-color);
+    font-family: var(--font-family-body);
+}
+
+.game-container {
+    max-width: 1250px; 
+    margin: 0 auto; /* Ganti margin-top 50px menjadi 0 */
+    padding: 30px;
+    background-color: var(--primary-bg-color); 
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); 
+    text-align: center;
+}
+
+.game-container h1 {
+    font-family: var(--font-family-heading);
+    color: var(--text-color); 
+    font-size: 2.8em;
+    margin-bottom: 25px;
+    letter-spacing: 1.5px;
+    border-bottom: 3px solid var(--highlight-color);
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+/* --- Info Skor & Babak (Elegan) --- */
+#game-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 35px;
+    padding: 18px 40px;
+    background-color: var(--secondary-bg-color); 
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 1.2em;
+    color: var(--text-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(139, 90, 43, 0.2); 
+}
+#score, #round-info {
+    min-width: 150px;
+    text-align: left;
+}
+#round-info {
+    text-align: right;
+}
+
+/* --- Area Pertanyaan & Peta (Tata Letak Seimbang) --- */
+#question-area {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 40px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* 1. Kontainer Gambar Budaya */
+#culture-image-container {
+    flex: 1;
+    min-width: 350px;
+    max-width: 45%;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); 
+    padding: 15px;
+    overflow: hidden; 
+}
+
+#culture-image {
+    width: 100%;
+    height: 380px; 
+    object-fit: cover;
+    border-radius: 12px;
+    border: 4px solid var(--secondary-bg-color); 
+    transition: transform 0.4s ease;
+}
+
+#image-caption {
+    font-size: 1.1em;
+    font-style: italic;
+    color: var(--highlight-color);
+    margin-top: 15px;
+    font-weight: 600;
+    padding: 5px;
+}
+
+/* 2. Kontainer Peta */
+#map-area-wrapper {
+    flex: 1.5; 
+    min-width: 550px; 
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#map-container {
+    height: 450px; 
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border: 5px solid var(--highlight-color); 
+    /* PENTING: Mencegah peta meluber dan memastikan kontrol zoom terlihat */
+    overflow: hidden; 
+}
+
+/* --- Tombol Interaksi (Elegant Buttons) --- */
+#guess-button, #next-round-button, #start-game-button, #play-again-button {
+    margin-top: 25px;
+    padding: 15px 40px;
+    font-size: 1.2em;
+    font-weight: 700;
+    border: 2px solid var(--text-color); 
+    border-radius: 50px; 
+    cursor: pointer;
+    background-color: var(--highlight-color);
+    color: white;
+    transition: background-color 0.3s ease, color 0.3s, transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+#guess-button:hover:not(:disabled), #next-round-button:hover, #start-game-button:hover, #play-again-button:hover {
+    background-color: var(--text-color); 
+    border-color: var(--highlight-color);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+#guess-button:disabled {
+    background-color: #cccccc;
+    color: #888;
+    border-color: #999;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+
+/* --- Area Feedback Hasil (Informasi yang jelas) --- */
+#feedback-area {
+    margin-top: 40px;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    border-left: 5px solid var(--highlight-color);
+}
+
+#feedback-message {
+    font-size: 1.6em;
+    font-family: var(--font-family-heading);
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+#distance-display, #round-score-display {
+    font-weight: 900;
+    color: var(--highlight-color);
+    font-size: 1.4em;
+    margin-left: 15px;
+    font-family: var(--font-family-heading);
+}
+
+/* --- Start Screen --- */
+#start-screen {
+    padding: 60px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    margin-top: 50px;
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid var(--secondary-bg-color);
+}
+#start-screen h2 {
+    font-family: var(--font-family-heading);
+    color: var(--text-color);
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+#start-screen p {
+    font-size: 1.3em;
+    color: #555;
+    margin-bottom: 40px;
+    line-height: 1.7;
+}
+
+/* --- Modal Hasil Akhir (Premium Look) --- */
+.modal {
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: var(--secondary-bg-color);
+    border-radius: 20px;
+    padding: 60px 40px;
+    border: 5px solid var(--highlight-color);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+.modal-content h2 {
+    font-family: var(--font-family-heading);
+    font-size: 2.8em;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+#final-total-score {
+    font-size: 4em;
+    font-weight: 900;
+    color: var(--highlight-color);
+    margin: 15px 0 30px;
+    display: block;
+}
+.button-link {
+    text-decoration: none;
+    padding: 15px 40px;
+    font-size: 1.2em;
+    font-weight: 700;
+    border: 2px solid var(--text-color); 
+    border-radius: 50px; 
+    background-color: var(--highlight-color);
+    color: white;
+    transition: background-color 0.3s ease, transform 0.2s;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: inline-block;
+}
+.button-link:hover {
+    background-color: var(--text-color);
+    transform: translateY(-3px);
+}
+
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 1024px) {
+    #map-area-wrapper {
+        min-width: 48%; 
+        max-width: 50%; 
+    }
+}
+
+@media (max-width: 768px) {
+    .game-container {
+        padding: 15px;
+    }
+    .game-container h1 {
+        font-size: 2em;
+    }
+    #question-area {
+        flex-direction: column;
+        align-items: center;
+    }
+    #culture-image-container, #map-area-wrapper {
+        min-width: 100%;
+        max-width: 100%;
+    }
+    #map-container {
+        height: 250px;
+    }
+    #game-info {
+        flex-direction: column;
+        gap: 8px;
+        padding: 15px;
+        font-size: 1.1em;
+    }
+    #start-screen {
+        padding: 30px 15px;
+    }
+    .modal-content {
+        padding: 40px 20px;
+    }
+}

@@ -3,48 +3,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Budaya Indonesia - Melestarikan Warisan Kita</title>
-    <link rel="stylesheet" href="style.css">  <!-- Link ke CSS -->
+    <title>NUSANTARA ÉLISE - Majesty of Indonesia</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght=700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header dengan navigasi -->
     <header>
-        <h1>Budaya Indonesia</h1>
+        <div class="logo">
+            <img src="images/Nusantara Élipse.png" alt="Logo"> NUSANTARA ÉLISE
+        </div>
         <nav>
-            <a href="#gallery">Galeri Budaya</a>
-            <a href="games/guesser.html">Mini Game Tebak Lokasi</a>
-            <a href="#about">Tentang</a>
+            <a href="#beranda">Beranda</a> 
+            <a href="#jelajahi">Jelajahi</a> 
+            <a href="#sekitar">Di Sekitar</a> 
+            <a href="#mainkan">Games</a> 
+            <a href="#tentang">Tentang</a> 
         </nav>
+        
+        <div class="account-link">
+            <a href="javascript:void(0)"><img src="images/profile-icon.png" alt="Akun Pengguna" class="profile-icon"></a>
+        </div>
     </header>
 
-    <!-- Bagian utama: Galeri -->
     <main>
-        <section id="gallery">
-            <h2>Galeri Budaya</h2>
-            <div class="gallery-grid">
-                <div class="item">
-                    <img src="images/borobudur.jpg" alt="Borobudur">
-                    <p>Candi Borobudur, simbol kebudayaan Jawa.</p>
-                </div>
-                <div class="item">
-                    <img src="images/batik.jpg" alt="Batik">
-                    <p>Batik, seni kain tradisional Indonesia.</p>
-                </div>
-                <!-- Tambah item sendiri: Copy-paste div.item dan ganti gambar/deskripsi -->
+        <section id="beranda" class="hero-section"> 
+            <div class="hero-content">
+                <p><strong class="highlight">NUSANTARA ÉLISE</strong> adalah sebuah inisiatif digital yang lahir dari tekad untuk menjaga kekayaan budaya Indonesia. Kami hadir sebagai platform yang berdedikasi untuk <strong class="highlight">mengumpulkan, mengkurasi, dan menyajikan</strong> berbagai informasi mengenai warisan Nusantara dari seluruh sumber terpercaya. .</p>
+                <p>Saat ini, kami memulai langkah dengan menjadi <strong class="highlight">pustaka digital</strong> yang mudah diakses. Kami merangkum tradisi, seni, dan peninggalan bersejarah ke dalam ruang digital yang informatif dan menarik. Melalui konten yang terus diperbarui dan fitur interaktif seperti permainan <strong class="highlight">CulturaGuess</strong>, kami berupaya <strong class="highlight">menyederhanakan pengetahuan budaya</strong> agar lebih dicintai oleh generasi muda.</p>
             </div>
         </section>
 
-        <section id="about">
-            <h2>Tentang Kami</h2>
-            <p>Website ini dibuat untuk melestarikan budaya Indonesia melalui galeri dan games edukatif.</p>
+        <section class="today-story">
+            <h2>TODAY'S STORY</h2>
+            <div class="carousel-container">
+                
+                <div class="image-slides">
+                    <div class="slide active" data-index="0">
+                        <img src="images/zapin api.jpg" alt="Tari Zapin Api">
+                    </div>
+                    <div class="slide" data-index="1">
+                        <img src="images/wayang perayaan natal.jpeg" alt="Wayang Perayaan Natal">
+                    </div>
+                    <div class="slide" data-index="2">
+                        <img src="images/tari topeng losari.jpeg" alt="Tari Topeng Losari">
+                    </div>
+                    <div class="slide" data-index="3">
+                        <img src="images/sigale gale 2.jpeg" alt="Sigale gale">
+                    </div>
+                    <div class="slide" data-index="4">
+                        <img src="images/Toraja.jpg" alt="Rumah Adat Toraja">
+                    </div>
+                </div>
+                
+                <div class="story-info-wrapper">
+                    <div class="story-text-item active" data-index="0">
+                        <h3>Tari Zapin Api: Tarian Api Panggilan Jiwa</h3>
+                        <p>Ritual mistis dari Riau di mana penari menginjak bara api tanpa alas kaki, sebagai simbol pembersihan diri dari energi negatif. Tarian ini sering dipentaskan di penghujung tahun sebagai permohonan keselamatan dan berkah.</p>
+                    </div>
+                    <div class="story-text-item" data-index="1">
+                        <h3>Perayaan Natal Jawa: Ketika Gamelan Menyambut Kabar Gembira</h3>
+                        <p>Perayaan Natal di Yogyakarta sering menampilkan akulturasi budaya yang indah. Misa dan kidung Natal dibawakan dengan iringan musik Gamelan dan dipenuhi dekorasi bernuansa batik. Ini adalah bukti nyata toleransi dan harmonisasi budaya Nusantara.</p>
+                    </div>
+                    <div class="story-text-item" data-index="2">
+                        <h3>Topeng Losari: Tujuh Wajah Kehidupan dari Cirebon</h3>
+                        <p>Inilah salah satu Topeng Losari Cirebon. Setiap topeng melambangkan karakter dan sifat manusia yang berbeda. Seni tari ini mengajarkan filosofi siklus kehidupan dan menjadi warisan adiluhung dari kebudayaan pesisir Jawa.</p>
+                    </div>
+                    <div class="story-text-item" data-index="3">
+                        <h3>Sigale-Gale: Boneka Kayu yang Menari untuk Arwah Leluhur</h3>
+                        <p>Sigale-gale adalah boneka kayu setinggi manusia dari Samosir. Dibuat dan ditarikan dalam upacara adat besar untuk menggantikan peran anak laki-laki yang hilang. Kisah Sigale-gale adalah perpaduan unik antara seni patung, mekanisme gerak, dan spiritualitas Batak.</p>
+                    </div>
+                    <div class="story-text-item" data-index="4">
+                        <h3>Tongkonan Toraja: Atap Kapal yang Megah</h3>
+                        <p>Rumah adat Suku Toraja dengan atap yang melengkung tajam mirip perahu terbalik. Bentuk ini melambangkan perjalanan leluhur mereka. Setiap ukiran di dindingnya (Pa'ssura') menceritakan silsilah keluarga dan status sosial pemiliknya.
+                </div>
+                
+                <div class="slide-indicators"></div>
+                
+            </div>
+        </section>
+
+        <section id="jelajahi" class="content-section">
+            <h2>Jelajahi Budaya</h2>
+            <p>Saatnya menjadi penjelajah budaya! Temukan kekayaan tak terbatas, mulai dari seni, filosofi, hingga peninggalan bersejarah dari seluruh pelosok negeri.</p>
+            
+            <div class="island-grid">
+                <a href="pages/jawa.html" class="island-card">
+                    <img src="images/elang jawa.jpeg" alt="Pulau Jawa">
+                    <h3>Jawa</h3>
+                </a>
+                <a href="pages/sumatra.html" class="island-card">
+                    <img src="images/harimau sumatra.jpeg" alt="Pulau Sumatera">
+                    <h3>Sumatera</h3>
+                </a>
+                <a href="pages/kalimantan.html" class="island-card">
+                    <img src="images/orangutan.jpeg" alt="Pulau Kalimantan">
+                    <h3>Kalimantan</h3>
+                </a>
+                <a href="pages/sulawesi.html" class="island-card">
+                    <img src="images/tarsius.jpeg" alt="Pulau Sulawesi">
+                    <h3>Sulawesi</h3>
+                </a>
+                <a href="pages/papua.html" class="island-card">
+                    <img src="images/cendrawasih.jpeg" alt="Pulau Papua">
+                    <h3>Papua</h3>
+                </a>
+                <a href="pages/bali.html" class="island-card">
+                    <img src="images/Jalak Bali copy.jpeg" alt="Pulau Bali">
+                    <h3>Bali</h3>
+                </a>
+                <a href="pages/nusa-tenggara.html" class="island-card">
+                    <img src="images/komodo.jpeg" alt="Nusa Tenggara"> 
+                    <h3>Nusa Tenggara</h3>
+                </a>
+                 <a href="pages/maluku.html" class="island-card">
+                    <img src="images/burung halmahera.jpeg" alt="Pulau Maluku">
+                    <h3>Maluku</h3>
+                </a>
+            </div>
+        </section>
+
+        <section id="sekitar" class="content-section secondary-bg-section">
+            <h2>Berita & Event Budaya</h2>
+            <p>Informasi terbaru seputar berita konservasi, jadwal event budaya, dan berbagai sorotan khusus kekayaan Nusantara.</p>
+            
+            <div class="event-news-grid">
+                <div class="news-card">
+                    <img src="images/berita bahasa.jpg" alt="Penemuan Artefak">
+                    <h4>75 Persen Bahasa Daerah di Indonesia Kritis dan Hampir Punah!</h4>
+                    <p>Kepala Pusat Pembinaan Bahasa dan Sastra Kementerian Pendidikan Dasar dan Menengah, Imam Budi Utomo, mengatakan bahwa penggunaan bahasa ibu, termasuk bahasa daerah, semakin tergerus. Dari 718 bahasa daerah di Indonesia, hanya 25 persen yang masih tergolong aman. <a href="https://bandung.kompas.com/read/2025/10/07/145326278/75-persen-bahasa-daerah-di-indonesia-kritis-dan-hampir-punah?utm_source=Various&utm_medium=Referral&utm_campaign=AIML_Widget_Desktop">Baca Selengkapnya</a></p>
+                </div>
+                <div class="news-card">
+                    <img src="images/pacujalur.jpeg" alt="Kunjungan Menteri">
+                    <h4>Siaran Pers: Sebelum Promosikan Pacu Jalur, Rapper AS Melly Mike Diajak Trip “Unfolding Jakarta”</h4>
+                    <p>Sebelum hadir untuk turut mempromosikan Festival Pacu Jalur Tradisional 2025" di Teluk Kuantan, Kuantan Singingi, Riau, rapper dan penyanyi asal AS Melly Mike yang lagunya menjadi latar tarian anak di atas perahu Pacu Jalur, diajak terlebih dahulu mengunjungi destinasi wisata di Jakarta melalui trip bertajuk “Unfolding Jakarta”. <a href="https://kemenpar.go.id/berita/siaran-pers-sebelum-promosikan-pacu-jalur-rapper-as-melly-mike-diajak-trip-unfolding-jakarta">Baca Selengkapnya</a></p>
+                </div>
+                <div class="news-card">
+                    <img src="images/mentri kebudayaan.jpg" alt="Festival Budaya">
+                    <h4>Fadli Zon Tegaskan Budaya Jadi Kompas Perdamaian di CHANDI 2025</h4>
+                    <p>Jakarta: Forum internasional Culture, Heritage, Art, Narrative, Diplomacy, and Innovation (CHANDI) 2025 memasuki hari kedua dengan sidang tingkat menteri yang dipimpin Menteri Kebudayaan, Fadli Zon, di Bali Beach Convention Centre, pada Rabu, 3 September 2025. Dalam pidato pembuka, Fadli menegaskan budaya harus ditempatkan di garis depan pembangunan global. <a href="https://www.metrotvnews.com/read/NA0CEJ2d-fadli-zon-tegaskan-budaya-jadi-kompas-perdamaian-di-chandi-2025">Baca Selengkapnya</a></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="mainkan" class="content-section">
+            <h2>CulturaGuess</h2>
+            <p>CulturaGuess adalah fitur interaktif utama dari <strong class="highlight">NUSANTARA ÉLISE</strong>, dirancang khusus untuk menguji sekaligus memperluas wawasan Anda tentang kekayaan geografi budaya Indonesia.</p>
+            <p><strong class="highlight">CulturaGuess</strong> mengubah proses belajar menjadi kompetisi yang menarik. Keakuratan penempatan tebakan Anda di peta akan menentukan skor yang diperoleh. Ini adalah cara modern, cepat, dan berwawasan untuk mengapresiasi keragaman tak terbatas dari Indonesia.</p>
+            <p><a href="games/guesser.html" class="button-link">Mainkan</a></p>
+        </section>
+
+        <section id="tentang" class="content-section secondary-bg-section">
+            <h2>Tentang Nusantara Élise & Visi Misi Kami</h2>
+            <div class="about-content">
+                <div class="vision-mission">
+                    <h3>Visi & Misi</h3>
+                    <p>Visi utama kami adalah menjadi <strong class="highlight">pusat konservasi budaya digital terdepan</strong>, memastikan warisan Nusantara <strong class="highlight">bersinar secara global</strong>. Kami bertujuan memicu kebanggaan di kalangan masyarakat Indonesia dan mencapai pengakuan universal atas kekayaan budaya bangsa.</p>
+                    <p>Misi kami berfokus pada tiga langkah: <strong class="highlight">Kurasi, Edukasi, dan Konservasi Digital</strong>. Kami mengumpulkan informasi terpercaya dan mengubahnya menjadi pengalaman menarik melalui fitur interaktif, seperti CulturaGuess. Langkah utama kami adalah membangun arsip digital yang kokoh untuk <strong class="highlight">pelestarian budaya abadi</strong>.</p>
+                </div>
+                
+                <div class="acknowledgement">
+                    <h3>Apresiasi</h3>
+                    <p>Proyek <strong class="highlight">NUSANTARA ÉLISE</strong> ini terwujud sebagai bentuk nyata dari Implementasi Tugas Akademik dalam lingkungan Fakultas Ilmu Budaya. Kami menyampaikan penghargaan setinggi-tingginya dan ucapan terima kasih sebesar-besarnya kepada <strong class="highlight">Universitas Brawijaya</strong>. Dukungan akademik, fasilitas yang inspiratif, dan kesempatan yang diberikan oleh institusi telah menjadi fondasi utama yang memungkinkan ide pelestarian budaya ini bertransformasi menjadi platform digital yang fungsional.</p>
+                </div>
+            </div>
         </section>
     </main>
 
-    <!-- Footer -->
     <footer>
-        <p>&copy; 2023 Budaya Indonesia. Dibuat dengan cinta untuk negeri.</p>
+        <p>&copy; 2025 NUSANTARA ÉLISE. Cinta kami untuk negeri.</p>
     </footer>
 
-    <script src="script.js"></script>  <!-- Link ke JS -->
+    <script src="script.js"></script>
 </body>
 </html>
